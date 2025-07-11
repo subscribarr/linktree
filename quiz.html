@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mark's Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(135deg, #232526 0%, #414345 100%);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background: rgba(30, 30, 40, 0.95);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      padding: 2.5rem 2rem 2rem 2rem;
+      max-width: 350px;
+      width: 100%;
+      text-align: center;
+      margin: 2rem 0;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+    }
+    .question {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #ff512f;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.15s;
+    }
+    .back-link:hover {
+      color: #dd2476;
+    }
+    .option {
+      display: block;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 0.7rem 1rem;
+      margin: 0.5rem 0;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .option:hover {
+      background: #444;
+    }
+    .result {
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      color: #bdbdbd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Mark's Quiz</h2>
+    <div class="question" id="question">What is Mark's favorite field?</div>
+    <button class="option" onclick="showResult('ecommerce')">Ecommerce</button>
+    <button class="option" onclick="showResult('it')">IT</button>
+    <button class="option" onclick="showResult('both')">Both</button>
+    <div class="result" id="result"></div>
+    <a class="back-link" href="index.html">&larr; Back to Links</a>
+  </div>
+  <script>
+    function showResult(answer) {
+      const result = document.getElementById('result');
+      if (answer === 'both') {
+        result.textContent = "Correct! Mark thrives at the intersection of ecommerce and IT.";
+      } else {
+        result.textContent = "Not quite! Mark's passion is in both ecommerce and IT.";
+      }
+    }
+  </script>
+</body>
+</html>
